@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: npm
-      - run: npm ci
+      - run: npm ci --foreground-scripts
       - run: npm run build
       - run: npm test
       - run: npm run test:protocol
