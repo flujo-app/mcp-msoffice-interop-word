@@ -145,3 +145,5 @@ The server exposes the following tools (tool names are prefixed with `word_`):
 ### Windows native build toolchain
 
 Use npm 11 or newer with Node 22/24, Python and the Visual Studio Desktop development with C++ workload. Node 22’s bundled older npm/node-gyp does not recognize Visual Studio 2026. Run `npm install --global npm@11.19.1` before installing this package. Native installation now fails clearly if `winax` could not build; use `npm install --foreground-scripts` to expose compiler diagnostics. Linux discovery does not load Word COM.
+
+The package includes the MIT-licensed winax3.6.9 native runtime source with a narrow V8 optional-member detection repair. Upstream’s current release otherwise fails to compile on Node22. Its source integrity, exclusions and exact change are recorded in `vendor/winax/PROVENANCE.md`; no Office macro fixtures or prebuilt binaries are shipped. A pinned node-gyp13.0.2 builds the addon during Windows installation. Keep optional dependencies enabled so this compiler driver is installed. Python/Visual Studio remain operator prerequisites; native Windows CI executes actual COM on Node22 and24.

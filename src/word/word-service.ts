@@ -124,9 +124,9 @@ export class WordService {
   private createOwnedApplication(): WordApplication {
     if (process.platform !== "win32")
       throw new Error(
-        "Microsoft Word automation requires Windows, Microsoft Word, and the optional winax native module.",
+        "Microsoft Word automation requires Windows, Microsoft Word, and the bundled winax native module.",
       );
-    const { Object: ActiveXObject } = require("winax");
+    const { Object: ActiveXObject } = require("../../vendor/winax/index.js");
     // Never attach to an unrelated user instance.
     return new ActiveXObject("Word.Application", { activate: false });
   }

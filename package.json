@@ -39,7 +39,7 @@
     "@modelcontextprotocol/server-legacy": "2.0.0"
   },
   "engines": {
-    "node": ">=22",
+    "node": "^22.22.2 || ^24.15.0",
     "npm": ">=11"
   },
   "bin": {
@@ -49,10 +49,17 @@
     "dist",
     "README.md",
     "LICENSE",
-    "scripts/check-native-addon.mjs"
+    "scripts/check-native-addon.mjs",
+    "vendor/winax/src",
+    "vendor/winax/LICENSE",
+    "vendor/winax/index.js",
+    "vendor/winax/activex.js",
+    "vendor/winax/binding.gyp",
+    "vendor/winax/package.json",
+    "vendor/winax/PROVENANCE.md"
   ],
   "optionalDependencies": {
-    "winax": "3.6.9"
+    "node-gyp": "13.0.2"
   },
   "repository": {
     "type": "git",

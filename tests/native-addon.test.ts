@@ -5,7 +5,7 @@ test(
   "Windows installs and executes the actual winax COM addon",
   { skip: process.platform !== "win32" },
   () => {
-    const winax = createRequire(import.meta.url)("winax");
+    const winax = createRequire(import.meta.url)("../vendor/winax/index.js");
     const dictionary = new winax.Object("Scripting.Dictionary", {
       activate: false,
     });

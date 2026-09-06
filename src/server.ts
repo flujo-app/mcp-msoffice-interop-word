@@ -44,7 +44,7 @@ export function createServer() {
       let nativeAddonAvailable = false;
       if (process.platform === "win32")
         try {
-          createRequire(import.meta.url)("winax");
+          createRequire(import.meta.url)("../vendor/winax/index.js");
           nativeAddonAvailable = true;
         } catch {}
       const status = {
