@@ -141,3 +141,7 @@ The server exposes the following tools (tool names are prefixed with `word_`):
   - `orientation` (number): `WdOrientation` value (0=Portrait, 1=Landscape).
 - `word_setPaperSize`: Sets paper size.
   - `paperSize` (number): `WdPaperSize` value (e.g., 1=Letter, 8=A4).
+
+### Windows native build toolchain
+
+Use npm 11 or newer with Node 22/24, Python and the Visual Studio Desktop development with C++ workload. Node 22’s bundled older npm/node-gyp does not recognize Visual Studio 2026. Run `npm install --global npm@11.19.1` before installing this package. Native installation now fails clearly if `winax` could not build; use `npm install --foreground-scripts` to expose compiler diagnostics. Linux discovery does not load Word COM.
